@@ -33,7 +33,6 @@ python PADDLES_Cifar.py --dataset cifar10 --noise_type symmetric --noise_rate 0.
 python PADDLES_Cifar.py --dataset cifar100 --noise_type instance --noise_rate 0.4
 ```
 
-```
 To train PADDLES with semi on CIFAR-10/100
 
 ```
@@ -43,8 +42,10 @@ python PADDLES_Cifar_Semi.py --dataset cifar100 --noise_type symmetirc --noise_r
 
 To train PADDLES on Clothing1M
 
-```train Clothing1M
-# python PADDLES_Clothing1M.py --workers 24 --TStop_AM 20 --TStop_PH 29 --num_epochs 15 --lr 4.5e-3 
+train Clothing1M
+```
+python PADDLES_Clothing1M.py --workers 24 --TStop_AM 20 --TStop_PH 29 --num_epochs 15 --lr 4.5e-3 
+```
 
 We also evaluate our method on [CIFAR-N Dataset](http://www.noisylabels.com/)
 ···
