@@ -26,53 +26,30 @@ pip install -r requirements.txt
 To train PADDLES without semi on CIFAR-10/100
 
 ```
-python PES_cs_Fusion2.py --dataset cifar10 --noise_type symmetric --noise_rate 0.5
+python PADDLES_Cifar.py --dataset cifar10 --noise_type symmetric --noise_rate 0.5
 ```
 
 ```
-python PES_cs_Fusion2.py --dataset cifar100 --noise_type instance --noise_rate 0.4
+python PADDLES_Cifar.py --dataset cifar100 --noise_type instance --noise_rate 0.4
 ```
 
 To train PADDLES with semi on CIFAR-10/100
 
 ```
-python PES_semi_Fusion2.py --dataset cifar100 --noise_type symmetirc --noise_rate 0.8 --lambda_u 100 --num_epochs 300 --T1 18 --TStop_PH 30 --seed 1
-python PES_semi_Fusion2.py --dataset cifar100 --noise_type symmetirc --noise_rate 0.5 --lambda_u 75  --num_epochs 300 --T1 18 --TStop_PH 30 --seed 1
-python PES_semi_Fusion2.py --dataset cifar100 --noise_type symmetirc --noise_rate 0.2 --lambda_u 50  --num_epochs 300 --T1 18 --TStop_PH 30 --seed 1
+python PADDLES_Cifar_Semi.py --dataset cifar100 --noise_type symmetirc --noise_rate 0.8 --lambda_u 100 --num_epochs 300 --TStop_AM 18 --TStop_PH 30 --seed 1
 ```
 
 
 To train PADDLES on Clothing1M
 
 ```train Clothing1M
-python PES_Clothing1M_New2.py
-```
+# python PADDLES_Clothing1M.py --workers 24 --TStop_AM 20 --TStop_PH 29 --num_epochs 15 --lr 4.5e-3 
 
 We also evaluate our method on [CIFAR-N Dataset](http://www.noisylabels.com/)
 ···
 Mv CIFAR-10_human.pt and CIFAR-100_human.pt to data/
 ```
-python PES_noisylabels_Fusion.py --noise_type aggre_label --dataset CIFAR10 --seed 1 --TStop_AM 20 --TStop_PH 30 
-```
-
-```
-python PES_noisylabels_Fusion.py --noise_type random_label1 --dataset CIFAR10 --seed 1 --TStop_AM 20 --TStop_PH 30 
-```
-
-```
-python PES_noisylabels_Fusion.py --noise_type random_label2 --dataset CIFAR10 --seed 1 --TStop_AM 20 --TStop_PH 30 
-```
-
-```
-python PES_noisylabels_Fusion2.py --noise_type random_label3 --dataset CIFAR10 --seed 1 --TStop_AM 30 --TStop_PH 35 --train 1 #seed=1 train=1 acc=96.25
-```
-
-```
-python PES_noisylabels_Fusion2.py --noise_type worse_label --dataset CIFAR10 --seed 1 --TStop_AM 25 --TStop_PH 30 --train 1 
-```
-
-```
-python PES_noisylabels_Fusion2.py --dataset CIFAR100 --seed 1 --TStop_AM 30--TStop_PH 35 --train 1  
+python PADDLES_CifarN.py --noise_type aggre_label --dataset CIFAR10 --seed 1 --TStop_AM 20 --TStop_PH 30 
 ```
 
 
