@@ -33,6 +33,7 @@ python PADDLES_Cifar.py --dataset cifar10 --noise_type symmetric --noise_rate 0.
 python PADDLES_Cifar.py --dataset cifar100 --noise_type instance --noise_rate 0.4
 ```
 
+```
 To train PADDLES with semi on CIFAR-10/100
 
 ```
